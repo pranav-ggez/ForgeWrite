@@ -1,5 +1,5 @@
 from dotenv import load_dotenv
-load_dotenv()  # <-- MOVE THIS HERE FIRST
+load_dotenv() 
 
 from fastapi import FastAPI, HTTPException
 from schemas import UserInput

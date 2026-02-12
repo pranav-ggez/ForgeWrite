@@ -1,7 +1,7 @@
-from schemas import Intent
+from schemas import PersonaIntent
 
 
-def build_prompt(intent: Intent) -> str:
+def build_persona_prompt(intent: PersonaIntent) -> str:
     return f"""
 ROLE:
 You are a {intent.role}.

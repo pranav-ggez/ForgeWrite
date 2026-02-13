@@ -221,12 +221,42 @@ export default function Home() {
           )} */}
 
           {result && (
-            <div
-              className={`mt-10 p-8 border rounded-xl text-base whitespace-pre-wrap transition ${themeStyles.card}`}
-            >
-              {result.final_prompt}
-            </div>
-          )}
+  <div className="mt-8 text-left relative">
+
+    {/* Copy Button */}
+    <button
+      onClick={() => {
+        const text =
+          typeof result.final_prompt === "string"
+            ? result.final_prompt
+            : JSON.stringify(result, null, 2);
+
+        navigator.clipboard.writeText(text);
+        setError("copied"); // reuse state temporarily
+        setTimeout(() => setError(""), 2000);
+      }}
+      className="absolute top-4 right-4 text-xs px-3 py-1 border rounded-md hover:scale-105 transition"
+    >
+      {error === "copied" ? "Copied ✓" : "Copy"}
+    </button>
+
+    {/* Prompt Card */}
+    <div
+      className={`whitespace-pre-wrap text-sm p-8 rounded-xl border ${
+        darkMode
+          ? "bg-neutral-900/40 border-neutral-700"
+          : "bg-neutral-100 border-neutral-300"
+      }`}
+    >
+      {typeof result.final_prompt === "string"
+        ? result.final_prompt
+        : JSON.stringify(result, null, 2)}
+    </div>
+  </div>
+)}
+
+
+
         </div>
       )}
     </main>

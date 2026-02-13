@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Sun, Moon, ArrowLeft, Github, Linkedin } from "lucide-react";
+import AnimatedBackground from "../components/AnimatedBackground";
 
 export default function Home() {
   const [showPrompt, setShowPrompt] = useState(false);
@@ -102,14 +103,16 @@ export default function Home() {
 
   return (
     <main
+    
   className={`min-h-screen flex flex-col items-center justify-center transition-colors duration-500 ${
     themeStyles.background
-  } ${darkMode ? "dark-selection" : "light-selection"}`}
->
+  } ${darkMode ? "dark-selection" : "light-selection"}`}>
+  
+  <AnimatedBackground darkMode={darkMode} />
 
       {/* Mouse Glow */}
       <div
-        className="pointer-events-none fixed inset-0 z-0"
+        className="pointer-events-none fixed inset-0 z-10"
         style={{
           background: `radial-gradient(
             700px at ${mousePosition.x}px ${mousePosition.y}px,

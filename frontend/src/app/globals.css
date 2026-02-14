@@ -84,3 +84,27 @@ body::after {
   background: black;
   color: white;
 }
+
+@keyframes modalFade {
+  from { opacity: 0; backdrop-filter: blur(0px); }
+  to { opacity: 1; backdrop-filter: blur(12px); }
+}
+
+@keyframes modalPop {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0px);
+  }
+}
+
+.animate-modalFade {
+  animation: modalFade 0.25s ease forwards;
+}
+
+.animate-modalPop {
+  animation: modalPop 0.28s cubic-bezier(.2,.8,.2,1) forwards;
+}

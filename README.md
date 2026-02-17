@@ -210,7 +210,7 @@ MIT License — free to use, modify, and distribute.
 
 ---
 
-⭐ Star the repository if you found it useful.
+⭐ Star the repository if you find it useful.
 
 ---
 

@@ -13,7 +13,7 @@ ForgeWrite is an AI-powered prompt compiler that transforms vague user input int
 ## Tech Stack
 
 - FastAPI
-- Gemini API (google-genai)
+- Gemini API - For the Master Prompt(google-genai)
 - Pydantic
 - Python
 
